@@ -1,0 +1,41 @@
+Implemention of continuation passing interpreter for a call by value language
+
+
+;;; ==================================================================
+;;; Abstract Syntax for the STORE-PASSING/IMPLICIT ALLOCATION language
+;;; ==================================================================
+
+
+
+;;; <ast> ::= <num-ast> |
+;;;           <bool-ast> |
+;;;           <id-ref-ast> |
+;;;           <assume-ast> |
+;;;           <ifte-ast>   |  
+;;;           <rec-ast> |
+;;;           <function-ast> |
+;;;           <app-ast> |
+
+;;;           <abort-ast> |
+;;;           <break-ast> |
+;;;           <try-ast> |
+;;;           <throw-ast> |
+;;;           <letcc-ast>
+
+;;; <num-ast>        ::= (number <number>)
+;;; <bool-ast>       ::= (boolean <boolean>)
+;;; <function-ast>   ::= (function (<id> ... ) <ast>)
+;;; <app-ast>        ::= (app  <ast>  <ast> ...)
+;;; <assume-ast>     ::= (assume (<bind> ...) <ast>)
+;;; <bind-ast>       ::= (<id> <ast>)
+;;; <id-ref-ast>     ::= (id-ref <id>)
+;;; <id>             ::= <symbol>
+;;; <ifte-ast>       ::= (ifte <ast> <ast> <ast>)
+;;; <recursive-ast>  ::= (recursive (<fbind> ...) <ast>)
+
+;;; <abort-ast>      ::= (abort <ast>)
+;;; <break-ast>      ::= (break <ast>)
+;;; <try-ast>        ::= (try <ast> <id> <ast>)
+;;; <throw-ast>      ::= (throw <ast>)
+;;; <letcc-ast>      ::= (letcc <id> <ast>)
+
